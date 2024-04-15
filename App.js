@@ -24,14 +24,14 @@ app.use(cors({
 const sessionOptions = {
     secret: process.env.SESSION_SECRET,
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: false
   };
   if (process.env.NODE_ENV !== "development") {
     sessionOptions.proxy = true;
     sessionOptions.cookie = {
       sameSite: "none",
       secure: true,
-      // domain: process.env.HTTP_SERVER_DOMAIN,
+      domain: 'kanbas-node-server-app-64gs.onrender.com/',
     };
   }
   app.use(session(sessionOptions));
