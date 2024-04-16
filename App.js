@@ -10,7 +10,9 @@ import session from "express-session";
 import "dotenv/config";
 
 // mongoose.connect("mongodb+srv://nathanael:supersecretpassword@cluster0.y3gf4zw.mongodb.net/");
-const CONNECTION_STRING = 'mongodb+srv://nathanael:supersecretpassword@cluster0.y3gf4zw.mongodb.net/' || 'mongodb://127.0.0.1:27017/kanbas'
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/kanbas'
+// const CONNECTION_STRING = 'mongodb+srv://nathanael:supersecretpassword@cluster0.y3gf4zw.mongodb.net/' 
+console.log(CONNECTION_STRING);
 mongoose.connect(CONNECTION_STRING);
 
 
@@ -31,7 +33,7 @@ const sessionOptions = {
     sessionOptions.cookie = {
       sameSite: "none",
       secure: true,
-      domain: 'kanbas-node-server-app-64gs.onrender.com/',
+      domain: 'kanbas-node-server-app-64gs.onrender.com',
     };
   }
   app.use(session(sessionOptions));
