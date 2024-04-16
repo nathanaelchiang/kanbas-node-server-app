@@ -34,7 +34,7 @@ const sessionOptions = {
     sessionOptions.cookie = {
       sameSite: "none",
       secure: true,
-      domain: 'kanbas-node-server-app-64gs.onrender.com',
+      // domain: 'kanbas-node-server-app-64gs.onrender.com',
     };
   }
   app.use(session(sessionOptions));
