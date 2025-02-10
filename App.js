@@ -9,10 +9,7 @@ import UserRoutes from "./Users/routes.js";
 import session from "express-session";
 import "dotenv/config";
 
-// mongoose.connect("mongodb+srv://nathanael:supersecretpassword@cluster0.y3gf4zw.mongodb.net/");
-//const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/kanbas'
-const CONNECTION_STRING = 'mongodb+srv://nathanael:supersecretpassword@cluster0.y3gf4zw.mongodb.net/kanbas' || 'mongodb://127.0.0.1:27017/kanbas'
-//const CONNECTION_STRING = 'mongodb+srv://nathanael:supersecretpassword@cluster0.y3gf4zw.mongodb.net/kanbas' 
+const CONNECTION_STRING = 'mongodb://127.0.0.1:27017/kanbas'
 console.log(CONNECTION_STRING);
 mongoose.connect(CONNECTION_STRING);
 
